@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import ComparisonPage from "./pages/ComparisonPage/ComparisonPage";
 import InvestmentsPage from "./pages/InvestmentsPage/InvestmentsPage";
+import TopIndiePublishers from "./pages/TopIndiePublishers/TopIndiePublishers";
 
 // Component Imports
 import NavBar from "./components/Navbar/Navbar";
@@ -42,6 +43,10 @@ function App() {
             <Route
               path="/invest"
               element={<InvestmentsPage gameList={gameList} />}
+            />
+            <Route
+            path="/indie"
+            element={<TopIndiePublishers gameList={gameList}/>}
             />
           </Routes>
         </div>
