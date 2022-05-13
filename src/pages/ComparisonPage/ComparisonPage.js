@@ -15,7 +15,7 @@ const ComparisonPage = ({ gameList }) => {
 
   useEffect(() => {
     filterGames();
-    generateSalesData();
+    
   }, []);
 
   function filterGames() {
@@ -26,19 +26,31 @@ const ComparisonPage = ({ gameList }) => {
     setFilteredGameList(filteredGames);
   }
 
-  function generateSalesData() {
-    const data = [["Platform", "N.A.", "Europe", "Japan", "Global"]];
-    for (const game in filteredGameList) {
-      data.push([
-        game.platform,
-        game.northAmericaSales,
-        game.europeSales,
-        game.japanSales,
-        game.globalSales,
-      ]);
-    }
-    return data;
-  }
+  let salesDataArrays = filteredGameList.map(game => {
+    return [game.platform,
+      game.northAmericaSales,
+      game.europeSales,
+      game.japanSales,
+      game.globalSales,]
+  });
+
+  // function generateSalesData() {
+  //   const data = [
+  //     ["Platform", "N.A.", "Europe", "Japan", "Global"],
+  //     ...salesDataArrays
+    
+  //     ];
+  //   }
+  //   return data;
+  // }
+
+  const data =[
+    ["Platform", "N.A.", "Europe", "Japan", "Global"],
+      ...salesDataArrays
+    
+      ];
+
+  
 
   return (
     <>
@@ -48,7 +60,7 @@ const ComparisonPage = ({ gameList }) => {
         chartType="Bar"
         width="100%"
         height="400px"
-        data={generateSalesData()}
+        data={data}
         options={options}
       />
     </>
