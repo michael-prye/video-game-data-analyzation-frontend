@@ -34,15 +34,7 @@ const ComparisonPage = ({ gameList }) => {
       game.globalSales,]
   });
 
-  // function generateSalesData() {
-  //   const data = [
-  //     ["Platform", "N.A.", "Europe", "Japan", "Global"],
-  //     ...salesDataArrays
-    
-  //     ];
-  //   }
-  //   return data;
-  // }
+
 
   const data =[
     ["Platform", "N.A.", "Europe", "Japan", "Global"],
