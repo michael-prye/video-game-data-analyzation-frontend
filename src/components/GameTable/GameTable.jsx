@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const GameTable = ({ filteredGameList }) => {
   return (
@@ -7,7 +8,8 @@ const GameTable = ({ filteredGameList }) => {
       {filteredGameList.map((game) => {
         return (
           <p>
-            {game.id} {game.name}
+            {game.id} {game.name} ({game.platform}){" "}
+            <Link to={`/compare?name=${game.name}`}>Compare Sales</Link>
           </p>
         );
       })}
