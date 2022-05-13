@@ -1,4 +1,3 @@
-import { toBePartiallyChecked } from "@testing-library/jest-dom/dist/matchers";
 import React from "react";
 import Chart from "react-google-charts";
 
@@ -36,7 +35,7 @@ const TopIndiePublishers = ({gameList}) => {
 
     const data =[["Publisher", "Sales"],...formatedTopTen];
     const options = {
-        hAxis : {slantedText: true, direction: -1, slantedTextAngle: 90}
+        bars: "horizontal"
 
     }
 
