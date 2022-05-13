@@ -3,22 +3,20 @@ import GameTable from "../../components/GameTable/GameTable";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 
-
-const HomePage = (props ) => {
+const HomePage = (props) => {
   const [searchParams] = useSearchParams();
-  const [filteredGameList, setFilteredGameList] = useState(null);
+  const [filteredGameList, setFilteredGameList] = useState([]);
   const [gameList, setGameList] = useState([]);
 
-  const searchTerm =
-    searchParams.get("search"); /* localhost:3000/?search="black ops"/ */
-
-  useEffect(() => {
-    filterGames();
-  }, []);
+  const searchTerm = searchParams.get("search");
 
   useEffect(() => {
     getGameList();
   }, []);
+
+  useEffect(() => {
+    filterGames();
+  }, [gameList]);
 
   async function getGameList() {
     try {
@@ -31,34 +29,24 @@ const HomePage = (props ) => {
   }
 
   function filterGames() {
-    //debugger;
-    let filteredGames = gameList.filter((game) => {
-      if (searchTerm) {
-        return game.name === searchTerm;
-      }
-    });
-    if(filterGames.length === 0){
-      setFilteredGameList(null)
-    }else{
-      setFilteredGameList(filteredGames);
-
+    let filteredGames;
+    if (searchTerm !== null) {
+      filteredGames = gameList.filter((game) => {
+        return game.name.toLowerCase().includes(searchTerm.toLowerCase());
+      });
+    } else {
+      filteredGames = gameList;
     }
-    
+    setFilteredGameList(filteredGames);
   }
 
   return (
     <>
-    {filteredGameList !== null  ?(
-      <GameTable filteredGameList={filteredGameList}/>
-      
-
-    ):(
-      <GameTable filteredGameList={gameList}/>
-    )
-      
-    
-    }
-       
+      {gameList.length === 0 ? (
+        <p>Loading games...</p>
+      ) : (
+        <GameTable filteredGameList={filteredGameList} />
+      )}
     </>
   );
 };
