@@ -1,8 +1,14 @@
+// General Imports
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
+
+// Page Imports
 import HomePage from "./pages/HomePage/HomePage";
 import ComparisonPage from "./pages/ComparisonPage/ComparisonPage";
+import InvestmentsPage from "./pages/InvestmentsPage/InvestmentsPage";
+
+// Component Imports
 import NavBar from "./components/Navbar/Navbar";
 
 function App() {
@@ -32,6 +38,10 @@ function App() {
             <Route
               path="/compare"
               element={<ComparisonPage gameList={gameList} />}
+            />
+            <Route
+              path="/invest"
+              element={<InvestmentsPage gameList={gameList} />}
             />
           </Routes>
         </div>

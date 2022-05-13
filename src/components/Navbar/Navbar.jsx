@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-
 const NavBar = (props) => {
   const [searchBarText, setSearchBarText] = useState("");
   const navigate = useNavigate();
@@ -20,7 +19,8 @@ const NavBar = (props) => {
           onChange={(e) => setSearchBarText(e.target.value)}
         />
       </form>
-      <Link to ={''}>HOME</Link>
+      <Link to={""}>HOME</Link>
+      <Link to={"invest/"}>Investment Tips</Link>
     </>
   );
 };

@@ -7,15 +7,8 @@ const ComparisonPage = ({ gameList }) => {
   const gameName = searchParams.get("name");
   const [filteredGameList, setFilteredGameList] = useState([]);
 
-  const options = {
-    chart: {
-      title: `${gameName}`,
-    },
-  };
-
   useEffect(() => {
     filterGames();
-    
   }, []);
 
   function filterGames() {
@@ -26,23 +19,26 @@ const ComparisonPage = ({ gameList }) => {
     setFilteredGameList(filteredGames);
   }
 
-  let salesDataArrays = filteredGameList.map(game => {
-    return [game.platform,
+  let salesDataArrays = filteredGameList.map((game) => {
+    return [
+      game.platform,
       game.northAmericaSales,
       game.europeSales,
       game.japanSales,
-      game.globalSales,]
+      game.globalSales,
+    ];
   });
 
+  const options = {
+    chart: {
+      title: `${gameName}`,
+    },
+  };
 
-
-  const data =[
+  const data = [
     ["Platform", "N.A.", "Europe", "Japan", "Global"],
-      ...salesDataArrays
-    
-      ];
-
-  
+    ...salesDataArrays,
+  ];
 
   return (
     <>
