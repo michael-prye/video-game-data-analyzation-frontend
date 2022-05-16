@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import ComparisonPage from "./pages/ComparisonPage/ComparisonPage";
 import InvestmentsPage from "./pages/InvestmentsPage/InvestmentsPage";
 import TopIndiePublishers from "./pages/TopIndiePublishers/TopIndiePublishers";
+import TopPublishersByConsolePage from "./pages/TopPublishersByConsolePage/TopPublishersByConsolePage";
 
 // Component Imports
 import NavBar from "./components/Navbar/Navbar";
@@ -45,8 +46,12 @@ function App() {
               element={<InvestmentsPage gameList={gameList} />}
             />
             <Route
-            path="/indie"
-            element={<TopIndiePublishers gameList={gameList}/>}
+              path="/indie"
+              element={<TopIndiePublishers gameList={gameList} />}
+            />
+            <Route
+              path="/publishers"
+              element={<TopPublishersByConsolePage gameList={gameList} />}
             />
           </Routes>
         </div>
