@@ -21,8 +21,6 @@ const NavBar = (props) => {
       </form>
       <Link to={""}>HOME</Link>
       <Link to={"invest/"}>Investment Tips</Link>
-      <Link to={"indie/"}>TOP INDIE</Link>
-      <Link to={"publishers/"}>Top Publishers By Console</Link>
     </>
   );
 };

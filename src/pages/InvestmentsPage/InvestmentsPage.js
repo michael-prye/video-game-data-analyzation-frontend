@@ -1,14 +1,14 @@
 import React from "react";
-import Chart from "react-google-charts";
-import { getTopConsoleData } from "../../utils/gameDataFunctions";
+import TopSellingConsolesChart from "../../components/charts/TopSellingConsolesChart";
+import TopIndiePublishersChart from "../../components/charts/TopIndiePublishersChart";
+import TopPublishersByConsoleChart from "../../components/charts/TopPublishersByConsoleChart";
 
 const InvestmentsPage = ({ gameList }) => {
-  const [data, options] = getTopConsoleData(gameList);
-
   return (
     <>
-      <h1>Top Selling Consoles Since 2013</h1>
-      <Chart chartType="Bar" width="100%" height="400px" data={data} />
+      <TopSellingConsolesChart gameList={gameList} />
+      <TopIndiePublishersChart gameList={gameList} />
+      <TopPublishersByConsoleChart gameList={gameList} />
     </>
   );
 };

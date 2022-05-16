@@ -2,12 +2,13 @@ import React from "react";
 import Chart from "react-google-charts";
 import { getTopPublishersByConsoleData } from "../../utils/gameDataFunctions";
 
-function TopPublishersByConsolePage({ gameList }) {
-  const [data, options] = getTopPublishersByConsoleData(gameList);
-
+const TopPublishersByConsoleChart = ({ gameList }) => {
+  const data = getTopPublishersByConsoleData(gameList);
+  const options = {
+    bars: "horizontal",
+  };
   return (
     <>
-      <p>Placeholder</p>
       <Chart
         chartType="Bar"
         width="100%"
@@ -17,6 +18,6 @@ function TopPublishersByConsolePage({ gameList }) {
       />
     </>
   );
-}
+};
 
-export default TopPublishersByConsolePage;
+export default TopPublishersByConsoleChart;

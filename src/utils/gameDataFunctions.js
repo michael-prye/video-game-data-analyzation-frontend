@@ -49,9 +49,7 @@ export function getTopConsoleData(gameList) {
 
   const data = [["Platform", "Sales"], ...platformArrays];
 
-  const options = [];
-
-  return [data, options];
+  return data;
 }
 
 export function getTopIndiePublishersData(gameList) {
@@ -92,11 +90,7 @@ export function getTopIndiePublishersData(gameList) {
 
   const data = [["Publisher", "Sales"], ...formatedTopTen];
 
-  const options = {
-    bars: "horizontal",
-  };
-
-  return [data, options];
+  return data;
 }
 
 export function getTopPublishersByConsoleData(gameList) {
@@ -160,9 +154,6 @@ export function getTopPublishersByConsoleData(gameList) {
 
   console.log(formatedTopPublishers);
   const data = [["Console", "Sales"], ...formatedTopPublishers];
-  const options = {
-    bars: "horizontal",
-  };
 
-  return [data, options];
+  return data;
 }
