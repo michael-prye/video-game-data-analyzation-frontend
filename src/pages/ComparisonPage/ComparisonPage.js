@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Chart } from "react-google-charts";
+import { getGameSalesData } from "../../utils/gameDataFunctions";
 
 const ComparisonPage = ({ gameList }) => {
   const [searchParams] = useSearchParams();
@@ -19,26 +20,7 @@ const ComparisonPage = ({ gameList }) => {
     setFilteredGameList(filteredGames);
   }
 
-  let salesDataArrays = filteredGameList.map((game) => {
-    return [
-      game.platform,
-      game.northAmericaSales,
-      game.europeSales,
-      game.japanSales,
-      game.globalSales,
-    ];
-  });
-
-  const options = {
-    chart: {
-      title: `${gameName}`,
-    },
-  };
-
-  const data = [
-    ["Platform", "N.A.", "Europe", "Japan", "Global"],
-    ...salesDataArrays,
-  ];
+  const [data, options] = getGameSalesData(gameName, filteredGameList);
 
   return (
     <>

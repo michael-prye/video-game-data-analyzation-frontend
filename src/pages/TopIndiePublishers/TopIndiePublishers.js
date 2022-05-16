@@ -1,46 +1,9 @@
 import React from "react";
 import Chart from "react-google-charts";
+import { getTopIndiePublishersData } from "../../utils/gameDataFunctions";
 
 const TopIndiePublishers = ({ gameList }) => {
-  const publishers = gameList.map((game) => game.publisher);
-  const distinctPublishers = [...new Set(publishers)];
-
-  const publisherArray = distinctPublishers.map((publisher) => {
-    const filterGames = gameList.filter((game) => game.publisher === publisher);
-    return [publisher, filterGames];
-  });
-
-  const indiePublisherArray = publisherArray.filter((publisher) =>
-    publisher[1].every((game) => game.name === publisher[1][0].name)
-  );
-
-  const indiePublisherSales = indiePublisherArray.map((publisher) => {
-    const globalSalesArray = publisher[1].map((game) => {
-      return game.globalSales;
-    });
-
-    const totalGlobalSales = globalSalesArray.reduce((prevVale, currValue) => {
-      return prevVale + currValue;
-    }, 0);
-
-    return [publisher[0], publisher[1][0].name, totalGlobalSales];
-  });
-
-  const topTenIndiePublishers = indiePublisherSales
-    .sort((a, b) => {
-      return b[2] - a[2];
-    })
-    .slice(0, 10);
-  console.log(topTenIndiePublishers);
-
-  const formatedTopTen = topTenIndiePublishers.map((publisher) => {
-    return [`${publisher[0]} (${publisher[1]})`, publisher[2]];
-  });
-
-  const data = [["Publisher", "Sales"], ...formatedTopTen];
-  const options = {
-    bars: "horizontal",
-  };
+  const [data, options] = getTopIndiePublishersData(gameList);
 
   return (
     <>
