@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 import TopSellingConsolesChart from "../../components/charts/TopSellingConsolesChart";
 import TopIndiePublishersChart from "../../components/charts/TopIndiePublishersChart";
 import TopPublishersByConsoleChart from "../../components/charts/TopPublishersByConsoleChart";
@@ -24,18 +25,20 @@ const InvestmentsPage = ({ gameList }) => {
 
   return (
     <>
-      <h1>Investment Tips</h1>
-      <p>Choose one of the following charts to view data</p>
-      <button onClick={() => setChoice("top consoles")}>
-        Best Selling Consoles Since 2013
-      </button>
-      <button onClick={() => setChoice("top indie")}>
-        Top 10 Indie Publishers
-      </button>
-      <button onClick={() => setChoice("top publishers")}>
-        Top Publishers By Console
-      </button>
-      {chartChoice}
+      <Container>
+        <h1>Investment Tips</h1>
+        <p>Choose one of the following charts to view data</p>
+        <button onClick={() => setChoice("top consoles")}>
+          Best Selling Consoles Since 2013
+        </button>
+        <button onClick={() => setChoice("top indie")}>
+          Top 10 Indie Publishers
+        </button>
+        <button onClick={() => setChoice("top publishers")}>
+          Top Publishers By Console
+        </button>
+        {chartChoice}
+      </Container>
     </>
   );
 };

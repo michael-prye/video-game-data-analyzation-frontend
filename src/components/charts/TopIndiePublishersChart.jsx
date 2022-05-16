@@ -5,20 +5,20 @@ import { getTopIndiePublishersData } from "../../utils/gameDataFunctions";
 const TopIndiePublishersChart = ({ gameList }) => {
   const data = getTopIndiePublishersData(gameList);
   const options = {
-    chart: {
-      title: "Top Selling Indie Publishers",
-      subtitle:
-        "Global sales data for game publishers that have only released one title",
-    },
-    bars: "horizontal",
+    title: "Top Selling Indie Publishers",
+    subtitle:
+      "Global sales data for game publishers that have only released one title",
+    vAxis: { title: "Publisher" },
+    hAxis: { title: "Sales (per million)" },
+    chartArea: { height: 600 },
   };
 
   return (
     <>
       <Chart
-        chartType="Bar"
+        chartType="BarChart"
         width="100%"
-        height="400px"
+        height="700px"
         data={data}
         options={options}
       />

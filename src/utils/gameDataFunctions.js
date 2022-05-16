@@ -79,10 +79,13 @@ export function getTopIndiePublishersData(gameList) {
   console.log(topTenIndiePublishers);
 
   const formatedTopTen = topTenIndiePublishers.map((publisher) => {
-    return [`${publisher[0]} (${publisher[1]})`, publisher[2]];
+    return [publisher[0], publisher[2], publisher[1]];
   });
 
-  const data = [["Publisher", "Sales"], ...formatedTopTen];
+  const data = [
+    ["Publisher", "Sales", { role: "annotation" }],
+    ...formatedTopTen,
+  ];
 
   return data;
 }
@@ -142,12 +145,15 @@ export function getTopPublishersByConsoleData(gameList) {
   //console.log(topSellingPublishersByConsole);
   const formatedTopPublishers = topSellingPublishersByConsole.map(
     (publisher) => {
-      return [`${publisher[0]} (${publisher[1][0]})`, publisher[1][1]];
+      return [publisher[0], publisher[1][1], publisher[1][0]];
     }
   );
 
   console.log(formatedTopPublishers);
-  const data = [["Console", "Sales"], ...formatedTopPublishers];
+  const data = [
+    ["Console", "Sales", { role: "annotation" }],
+    ...formatedTopPublishers,
+  ];
 
   return data;
 }
