@@ -1,4 +1,4 @@
-export function getGameSalesData(gameTitle, gameList) {
+export function getGameSalesData(gameList) {
   let salesDataArrays = gameList.map((game) => {
     return [
       game.platform,
@@ -9,18 +9,12 @@ export function getGameSalesData(gameTitle, gameList) {
     ];
   });
 
-  const options = {
-    chart: {
-      title: `${gameTitle}`,
-    },
-  };
-
   const data = [
     ["Platform", "N.A.", "Europe", "Japan", "Global"],
     ...salesDataArrays,
   ];
 
-  return [data, options];
+  return data;
 }
 
 export function getTopConsoleData(gameList) {

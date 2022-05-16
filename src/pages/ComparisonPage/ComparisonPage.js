@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Chart } from "react-google-charts";
-import { getGameSalesData } from "../../utils/gameDataFunctions";
+import SalesComparisonChart from "../../components/charts/SalesComparisonChart";
 
 const ComparisonPage = ({ gameList }) => {
   const [searchParams] = useSearchParams();
@@ -20,19 +19,10 @@ const ComparisonPage = ({ gameList }) => {
     setFilteredGameList(filteredGames);
   }
 
-  const [data, options] = getGameSalesData(gameName, filteredGameList);
-
   return (
     <>
       <h1>{gameName}</h1>
-
-      <Chart
-        chartType="Bar"
-        width="100%"
-        height="400px"
-        data={data}
-        options={options}
-      />
+      <SalesComparisonChart gameName={gameName} gameList={filteredGameList} />
     </>
   );
 };
