@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
+import "./ComparisonCard.css"
 
 const ComparisonCard = ({gameList}) => {
     console.log(gameList)
@@ -8,22 +9,25 @@ const ComparisonCard = ({gameList}) => {
             
             <Container>
                 <Row>
-                    <h2>{gameList[0].name}</h2>
+                    <h2 className="custon-title">{gameList[0].name}</h2>
                 </Row>
-                <Row>
-                    <td>Genre: </td><td>{gameList[0].genre}</td>
-                    <td>Publisher: </td><td>{gameList[0].publisher}</td>
-                    <td>Release Data: </td><td>{gameList[0].year}</td>
+                <Row bsPrefix="custom-row">
+                    <tr className="custom-sub-row"><td>{`Genre: ${gameList[0].genre}`}</td></tr>
+                    <tr className="custom-sub-row"><td>{`Publisher: ${gameList[0].publisher}`}</td></tr>
+                    <tr className="custom-sub-row"><td>{`Release Data: ${gameList[0].year}`}</td></tr>
                 </Row>
-                <Row>
+                <Row bsPrefix="custom-row">
                     {gameList.map((game)=>{
-                        return(<div>
+                        return( <Col bsPrefix="custom-col">
+                            
                             <h2>{game.platform}</h2>
-                            <td>Rank: </td><td>{game.rank}</td>
-                            <td>North America Sales: </td><td>{game.northAmericaSales}</td>
-                            <td>Japan Sales: </td><td>{game.japanSales}</td>
-                            <td>Europe Sales: </td><td>{game.europeSales}</td>
-                            </div>
+                            <tr> <td>{`Rank: ${game.rank}`}</td></tr>
+                            <tr> <td>{`North America Sales: ${game.northAmericaSales}`}</td></tr>
+                            <tr> <td>{`Japan Sales: ${game.japanSales}`}</td></tr>
+                            <tr> <td>{`Europe Sales: ${game.europeSales}`}</td></tr>
+                            
+                            </Col>
+                            
                         )
                         
 
