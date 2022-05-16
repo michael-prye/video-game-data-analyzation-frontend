@@ -1,4 +1,5 @@
 import React from "react";
+import Chart from "react-google-charts";
 
 function TopPublishersByConsolePage({ gameList }) {
   // Array of distinct console names
@@ -54,11 +55,27 @@ function TopPublishersByConsolePage({ gameList }) {
       return [consoleName, topSellingPublisher];
     }
   );
-  console.log(topSellingPublishersByConsole);
+  //console.log(topSellingPublishersByConsole);
+  const formatedTopPublishers = topSellingPublishersByConsole.map((publisher)=>{
+    return [`${publisher[0]} (${publisher[1][0]})`, publisher[1][1]]
+  })
+
+  console.log(formatedTopPublishers);
+  const data =[["Console", "Sales"], ...formatedTopPublishers];
+  const options = {
+    bars: "horizontal",
+  };
 
   return (
     <>
       <p>Placeholder</p>
+      <Chart
+      chartType="Bar"
+      width="100%"
+      height="400px"
+      data={data}
+      options={options}
+      />
     </>
   );
 }
