@@ -1,0 +1,18 @@
+.custom-table{
+    text-align: left;
+}
+.custon-header{
+    border-bottom: 3px solid black;
+}
+.compare-sales{
+    text-decoration: none;
+    color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-bottom-width: 1px;
+    
+}
+.custon-row{
+    padding-bottom: 10px;
+}
