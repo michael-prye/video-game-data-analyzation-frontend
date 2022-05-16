@@ -1,0 +1,18 @@
+.custom-row{
+    display: flex;
+    justify-content: center;
+
+}
+.custon-title{
+    text-align: center;
+}
+.custom-col{
+    margin: 10px;
+    padding: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+.custom-sub-row{
+    margin: 5px;
+}
