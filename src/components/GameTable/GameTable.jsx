@@ -7,21 +7,18 @@ import "./GameTable.css";
 const GameTable = ({ filteredGameList }) => {
   return (
     <>
-      <Container>
-        <h1 className="custon-header">Game List</h1>
-        <table className="custom-table">
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Platform</th>
-            <th>Year</th>
-            <th>Publisher</th>
-          </tr>
-          {filteredGameList.map((game) => (
-            <GameTableCard game={game} />
-          ))}
-        </table>
-      </Container>
+      <h1>Games</h1>
+      <Row style={{ "font-weight": "bold" }}>
+        <Col sm={1}>ID</Col>
+        <Col>Name</Col>
+        <Col sm={1}>Platform</Col>
+        <Col sm={1}>Year</Col>
+        <Col sm={2}>Publisher</Col>
+        <Col sm={2}></Col>
+      </Row>
+      {filteredGameList.map((game) => (
+        <GameTableCard game={game} />
+      ))}
     </>
   );
 };
