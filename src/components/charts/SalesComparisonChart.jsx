@@ -6,9 +6,9 @@ const SalesComparisonChart = ({ gameName, gameList }) => {
   const data = getGameSalesData(gameList);
   const options = {
     chart: {
-      title: `${gameName}`,
-      subtitle: "Sales data by platform",
+      title: "Sales data by platform",
     },
+    colors: ["#7A52AB", "#AB5252", "#B55786", "#9E539E"],
   };
 
   return (

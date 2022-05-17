@@ -1,6 +1,12 @@
-.comparisonpage__body{
-    background-color: rgb(112, 23, 112);
-    color: white;
-    background-size: cover;
+.comparisonpage__header {
+  padding-top: 5%;
+  background-color: rgb(112, 23, 112);
+  color: white;
+  background-size: cover;
 }
 
+.comparisonpage__body {
+  background-color: white;
+  padding: 16px;
+  border-radius: 10px;
+}
