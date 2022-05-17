@@ -1,5 +1,7 @@
 .navbar__body {
-  background-color: rgb(158, 83, 158);
+  background-color: #9e539e;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .navbar__link {

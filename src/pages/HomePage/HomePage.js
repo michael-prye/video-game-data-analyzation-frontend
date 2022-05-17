@@ -33,7 +33,10 @@ const HomePage = ({ gameList }) => {
           {gameList.length === 0 ? (
             <p>Loading games...</p>
           ) : (
-            <GameTable filteredGameList={filteredGameList} />
+            <GameTable
+              filteredGameList={filteredGameList}
+              searchTerm={searchTerm}
+            />
           )}
         </Container>
       </div>

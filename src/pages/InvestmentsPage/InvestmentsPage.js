@@ -30,15 +30,29 @@ const InvestmentsPage = ({ gameList }) => {
         <Container>
           <h1 className="white-text top-spacing">Investment Tips</h1>
           <p className="white-text">
-            Choose one of the following charts to view data
+            Need help deciding what publisher to invest in? Check out some of
+            these charts!
           </p>
-          <button className="tab" onClick={() => setChoice("top consoles")}>
+          <button
+            className={
+              choice === "top consoles" ? "tab--active" : "tab--inactive"
+            }
+            onClick={() => setChoice("top consoles")}
+          >
             Best Selling Consoles Since 2013
           </button>
-          <button className="tab" onClick={() => setChoice("top indie")}>
+          <button
+            className={choice === "top indie" ? "tab--active" : "tab--inactive"}
+            onClick={() => setChoice("top indie")}
+          >
             Top 10 Indie Publishers
           </button>
-          <button className="tab" onClick={() => setChoice("top publishers")}>
+          <button
+            className={
+              choice === "top publishers" ? "tab--active" : "tab--inactive"
+            }
+            onClick={() => setChoice("top publishers")}
+          >
             Top Publishers By Console
           </button>
           {chartChoice}

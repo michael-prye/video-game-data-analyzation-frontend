@@ -10,6 +10,7 @@ import InvestmentsPage from "./pages/InvestmentsPage/InvestmentsPage";
 
 // Component Imports
 import NavBar from "./components/Navbar/Navbar";
+import "./App.css";
 
 function App() {
   const [gameList, setGameList] = useState([]);

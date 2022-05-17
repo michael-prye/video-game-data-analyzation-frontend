@@ -11,6 +11,7 @@ const TopIndiePublishersChart = ({ gameList }) => {
     vAxis: { title: "Publisher" },
     hAxis: { title: "Sales (per million)" },
     chartArea: { height: 600 },
+    colors: ["#9e539e"],
   };
 
   return (

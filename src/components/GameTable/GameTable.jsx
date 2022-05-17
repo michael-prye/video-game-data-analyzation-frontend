@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import GameTableCard from "../GameTableCard/GameTableCard";
 import "./GameTable.css";
 
-const GameTable = ({ filteredGameList }) => {
+const GameTable = ({ filteredGameList, searchTerm }) => {
   const [maxGames, setMaxGames] = useState(50);
 
   const viewMoreGames = function () {
@@ -13,7 +13,7 @@ const GameTable = ({ filteredGameList }) => {
 
   return (
     <>
-      <h1 className="gametable_header">Games</h1>
+      <h1 className="gametable__header">Games</h1>
       <div className="gametable__body">
         <Row style={{ "font-weight": "bold" }}>
           <Col sm={1}>ID</Col>
@@ -26,7 +26,22 @@ const GameTable = ({ filteredGameList }) => {
         {filteredGameList.slice(0, maxGames).map((game) => (
           <GameTableCard game={game} />
         ))}
-        <button onClick={viewMoreGames}>View More Games</button>
+        {filteredGameList.length >= maxGames ? (
+          <Row>
+            <Col className="d-flex justify-content-center">
+              <button className="gametable__button" onClick={viewMoreGames}>
+                View More Games
+              </button>
+            </Col>
+          </Row>
+        ) : null}
+        {filteredGameList.length === 0 ? (
+          <Row>
+            <Col className="d-flex justify-content-center">
+              <em>{`No games called "${searchTerm}" found in database.`}</em>
+            </Col>
+          </Row>
+        ) : null}
       </div>
     </>
   );

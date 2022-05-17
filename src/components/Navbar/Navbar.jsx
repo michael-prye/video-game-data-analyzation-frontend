@@ -18,14 +18,14 @@ const NavBar = (props) => {
       <div className="navbar__body">
         <Container>
           <Row>
-            <Col md={2}>
+            <Col md={1}>
               <Link className="navbar__link" to={""}>
-                <h4>Home</h4>
+                <h5>Home</h5>
               </Link>
             </Col>
-            <Col md={2}>
+            <Col md={3}>
               <Link className="navbar__link" to={"invest/"}>
-                <h4>Investment Tips</h4>
+                <h5>Investment Tips</h5>
               </Link>
             </Col>
             <Col>

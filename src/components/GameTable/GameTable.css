@@ -1,8 +1,20 @@
 .gametable__body {
   background-color: white;
+  padding: 16px;
+  border-radius: 10px;
 }
 
-.gametable_header {
+.gametable__header {
   padding-top: 5%;
   color: white;
+}
+
+.gametable__button {
+  margin-top: 8px;
+  background-color: rgb(112, 23, 112);
+  color: white;
+  border-style: none;
+  border-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
 }

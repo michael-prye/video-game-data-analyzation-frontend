@@ -1,5 +1,5 @@
 .investmentspage__body {
-  background-color: rgb(112, 23, 112);
+  background-color: #701770;
 }
 
 .top-spacing {
@@ -10,9 +10,17 @@
   color: white;
 }
 
-.tab {
+.tab--active {
   margin-right: 8px;
   background-color: white;
+  border-style: none;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.tab--inactive {
+  margin-right: 8px;
+  background-color: rgb(201, 201, 201);
   border-style: none;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;

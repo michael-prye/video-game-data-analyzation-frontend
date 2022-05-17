@@ -9,6 +9,7 @@ const TopPublishersByConsoleChart = ({ gameList }) => {
     vAxis: { title: "Console" },
     hAxis: { title: "Sales (per million)" },
     chartArea: { height: 600 },
+    colors: ["#9e539e"],
   };
   return (
     <>
