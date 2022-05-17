@@ -1,0 +1,33 @@
+1. Personal Introduction
+    - Who you are
+    - Background
+    - Why you are excited about this project
+
+2. Introduce Application
+    - BUSINESS PROBLEM: This application gives useful data for investing in video game companies
+        -Searchable game database with information about international sales data
+        -Visualized data about trends in the video game industry (charts)
+
+3. Technologies Used
+    -Backend:
+        - API: ASP.NET Core (C#)
+        - Database: Microsoft SQL Server
+        - Testing: Postman
+    -Frontend:
+        - React (w/ React Router, React Google Charts)
+        - HTML/CSS
+    - Development:
+        - Git/Github for repo hosting
+
+4. Feature Showcase:
+    -Features:
+        -Game database (search database for a game, pull up Comparison Page)
+        -Trend data visualization (tab through different charts, explaining each)
+
+    -Feature we're proud of:
+        - Data analysis algorithm for generating trend charts
+
+    -Specific Challenge:
+        - Handling long render times when loading in game data all at once
+        - Solution: Adding button to game table to display more games on the table
+
