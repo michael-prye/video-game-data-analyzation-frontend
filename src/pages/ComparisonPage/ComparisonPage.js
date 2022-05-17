@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import SalesComparisonChart from "../../components/charts/SalesComparisonChart";
 import ComparisonCard from "../../components/ComparisonCard/ComparisonCard";
+import "./ComparisonPage.css"
 
 const ComparisonPage = ({ gameList }) => {
   const [searchParams] = useSearchParams();
@@ -22,7 +23,7 @@ const ComparisonPage = ({ gameList }) => {
   }
 
   return (
-    <>
+    <div className="comparisonpage__body">
       <Container>
         <h1>{gameName}</h1>
         {filteredGameList.length != 0 && (
@@ -35,7 +36,7 @@ const ComparisonPage = ({ gameList }) => {
           </div>
         )}
       </Container>
-    </>
+    </div>
   );
 };
 
