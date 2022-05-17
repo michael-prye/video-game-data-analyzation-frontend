@@ -1,0 +1,9 @@
+.navbar__body {
+  background-color: rgb(158, 83, 158);
+}
+
+.navbar__link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-style: none;
+}

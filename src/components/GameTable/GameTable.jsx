@@ -13,19 +13,21 @@ const GameTable = ({ filteredGameList }) => {
 
   return (
     <>
-      <h1>Games</h1>
-      <Row style={{ "font-weight": "bold" }}>
-        <Col sm={1}>ID</Col>
-        <Col>Name</Col>
-        <Col sm={1}>Platform</Col>
-        <Col sm={1}>Year</Col>
-        <Col sm={2}>Publisher</Col>
-        <Col sm={2}></Col>
-      </Row>
-      {filteredGameList.slice(0, maxGames).map((game) => (
-        <GameTableCard game={game} />
-      ))}
-      <button onClick={viewMoreGames}>View More Games</button>
+      <h1 className="gametable_header">Games</h1>
+      <div className="gametable__body">
+        <Row style={{ "font-weight": "bold" }}>
+          <Col sm={1}>ID</Col>
+          <Col>Name</Col>
+          <Col sm={1}>Platform</Col>
+          <Col sm={1}>Year</Col>
+          <Col sm={3}>Publisher</Col>
+          <Col sm={2}></Col>
+        </Row>
+        {filteredGameList.slice(0, maxGames).map((game) => (
+          <GameTableCard game={game} />
+        ))}
+        <button onClick={viewMoreGames}>View More Games</button>
+      </div>
     </>
   );
 };

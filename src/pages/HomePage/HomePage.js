@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import GameTable from "../../components/GameTable/GameTable";
 import { useSearchParams } from "react-router-dom";
 import { Container } from "react-bootstrap";
+import "./HomePage.css";
 
 const HomePage = ({ gameList }) => {
   const [searchParams] = useSearchParams();
@@ -27,13 +28,15 @@ const HomePage = ({ gameList }) => {
 
   return (
     <>
-      <Container>
-        {gameList.length === 0 ? (
-          <p>Loading games...</p>
-        ) : (
-          <GameTable filteredGameList={filteredGameList} />
-        )}
-      </Container>
+      <div className="homepage__body">
+        <Container>
+          {gameList.length === 0 ? (
+            <p>Loading games...</p>
+          ) : (
+            <GameTable filteredGameList={filteredGameList} />
+          )}
+        </Container>
+      </div>
     </>
   );
 };

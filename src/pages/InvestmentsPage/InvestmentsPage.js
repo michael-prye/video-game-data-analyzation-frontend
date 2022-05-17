@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import TopSellingConsolesChart from "../../components/charts/TopSellingConsolesChart";
 import TopIndiePublishersChart from "../../components/charts/TopIndiePublishersChart";
 import TopPublishersByConsoleChart from "../../components/charts/TopPublishersByConsoleChart";
+import "./InvestmentsPage.css";
 
 const InvestmentsPage = ({ gameList }) => {
   const [choice, setChoice] = useState("top consoles");
@@ -25,20 +26,24 @@ const InvestmentsPage = ({ gameList }) => {
 
   return (
     <>
-      <Container>
-        <h1>Investment Tips</h1>
-        <p>Choose one of the following charts to view data</p>
-        <button onClick={() => setChoice("top consoles")}>
-          Best Selling Consoles Since 2013
-        </button>
-        <button onClick={() => setChoice("top indie")}>
-          Top 10 Indie Publishers
-        </button>
-        <button onClick={() => setChoice("top publishers")}>
-          Top Publishers By Console
-        </button>
-        {chartChoice}
-      </Container>
+      <div className="investmentspage__body">
+        <Container>
+          <h1 className="white-text top-spacing">Investment Tips</h1>
+          <p className="white-text">
+            Choose one of the following charts to view data
+          </p>
+          <button className="tab" onClick={() => setChoice("top consoles")}>
+            Best Selling Consoles Since 2013
+          </button>
+          <button className="tab" onClick={() => setChoice("top indie")}>
+            Top 10 Indie Publishers
+          </button>
+          <button className="tab" onClick={() => setChoice("top publishers")}>
+            Top Publishers By Console
+          </button>
+          {chartChoice}
+        </Container>
+      </div>
     </>
   );
 };

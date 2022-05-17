@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
+import "./Navbar.css";
 
 const NavBar = (props) => {
   const [searchBarText, setSearchBarText] = useState("");
@@ -14,29 +15,31 @@ const NavBar = (props) => {
 
   return (
     <>
-      <Container>
-        <Row>
-          <Col md={2}>
-            <Link to={""}>
-              <h4>Home</h4>
-            </Link>
-          </Col>
-          <Col md={2}>
-            <Link to={"invest/"}>
-              <h4>Investment Tips</h4>
-            </Link>
-          </Col>
-          <Col>
-            <form onSubmit={handleSubmit}>
-              <input
-                style={{ width: "100%" }}
-                placeholder="Search"
-                onChange={(e) => setSearchBarText(e.target.value)}
-              />
-            </form>
-          </Col>
-        </Row>
-      </Container>
+      <div className="navbar__body">
+        <Container>
+          <Row>
+            <Col md={2}>
+              <Link className="navbar__link" to={""}>
+                <h4>Home</h4>
+              </Link>
+            </Col>
+            <Col md={2}>
+              <Link className="navbar__link" to={"invest/"}>
+                <h4>Investment Tips</h4>
+              </Link>
+            </Col>
+            <Col>
+              <form onSubmit={handleSubmit}>
+                <input
+                  style={{ width: "100%" }}
+                  placeholder="Search"
+                  onChange={(e) => setSearchBarText(e.target.value)}
+                />
+              </form>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </>
   );
 };
