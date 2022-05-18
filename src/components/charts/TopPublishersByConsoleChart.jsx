@@ -1,6 +1,6 @@
 import React from "react";
 import Chart from "react-google-charts";
-import { getTopPublishersByConsoleData } from "../../utils/gameDataFunctions";
+import { getTopPublishersByConsoleData } from "../../utils/gameTrendsUtils";
 
 const TopPublishersByConsoleChart = ({ gameList }) => {
   const data = getTopPublishersByConsoleData(gameList);

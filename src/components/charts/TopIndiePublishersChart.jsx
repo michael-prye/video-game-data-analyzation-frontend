@@ -1,6 +1,6 @@
 import React from "react";
 import Chart from "react-google-charts";
-import { getTopIndiePublishersData } from "../../utils/gameDataFunctions";
+import { getTopIndiePublishersData } from "../../utils/gameTrendsUtils";
 
 const TopIndiePublishersChart = ({ gameList }) => {
   const data = getTopIndiePublishersData(gameList);

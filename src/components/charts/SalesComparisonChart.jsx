@@ -1,6 +1,6 @@
 import React from "react";
 import Chart from "react-google-charts";
-import { getGameSalesData } from "../../utils/gameDataFunctions";
+import { getGameSalesData } from "../../utils/gameTrendsUtils";
 
 const SalesComparisonChart = ({ gameName, gameList }) => {
   const data = getGameSalesData(gameList);
